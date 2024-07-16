@@ -195,3 +195,25 @@ footer p {
     border-radius: 5px;
     margin-right: 10px;
 }
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+.activity-item {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.activity-item a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+.activity-item a:hover {
+    text-decoration: underline;
+}
+.activity-item p {
+    margin: 5px 0 0;
+}

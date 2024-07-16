@@ -148,4 +148,32 @@ async function fetchTopArtists() {
         document.getElementById('top-artists').innerHTML = 'Error fetching data.';
     }
 }
+const username = 'luca-hatu';
+const activityList = document.getElementById('activity-content');
 
+async function fetchActivity() {
+    const response = await fetch(`https://api.github.com/users/${username}/events`);
+    const events = await response.json();
+    displayActivity(events.slice(0, 2)); 
+}
+
+function displayActivity(events) {
+    activityList.innerHTML = '';
+
+    events.forEach(event => {
+        const eventType = event.type.replace(/([A-Z])/g, ' $1').trim();
+        const repoName = event.repo.name;
+        const eventTime = new Date(event.created_at).toLocaleString();
+
+        const activityItem = document.createElement('div');
+        activityItem.className = 'activity-item';
+        activityItem.innerHTML = `
+            <strong>${eventType}</strong> at 
+            <a href="https://github.com/${repoName}" target="_blank">${repoName}</a>
+            <p>${eventTime}</p>
+        `;
+        activityList.appendChild(activityItem);
+    });
+}
+
+fetchActivity();
