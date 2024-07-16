@@ -91,19 +91,24 @@ body {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px
+    gap: 20px;
+    margin-top: 20px;
 }
-
 .project {
     background: rgba(0, 0, 0, 0.6);
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid #555;
     color: #fff;
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin: 0; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.project:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6)
 }
 
 .project h3 {
@@ -154,4 +159,39 @@ footer p {
     margin: 0;
     font-size: 0.9rem;
 }
+#recent-tracks {
+    margin-top: 20px;
+}
 
+.track {
+    margin-bottom: 20px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+}
+
+.track-image {
+    width: 50px; 
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.track-info p {
+    margin: 0;
+    font-size: 14px;
+}
+.artist, .artist-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.artist-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
